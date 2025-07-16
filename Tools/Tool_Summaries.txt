@@ -1,0 +1,68 @@
+du: disk usage
+ --> It shows the disk size of a specific folder and all its subfolders
+ --> du -h inhere/
+
+
+
+xargs
+ --> It takes input (usually from stdin) and builds and executes command lines from that input. (so in case of | it receives the output from pipe and pass it as arguments to the passed command such as rm or file)
+ --> find . -type f | xargs rm    // removes all the files returned by find
+
+
+
+file
+ --> It returns the type of a file not just by looking for the extensions
+ --> file ./-file01
+
+
+
+find: recursively searches for files and directories
+ --> returns a list of paths with a specific pattern
+ --> find . -type f -name "*.conf"   // returns all paths with .conf extension in the current directory and all its subdirectories
+--> Some Actions:
+	-exec: allows us to run a command on every result returned by find, i.e., find . -type f -exec ls -l {} \; where {} is a placeholder for the current file that find is processing and \; ends the -exec command (must be escaped!). Note: use + instead of \; which executes the command once per batch (passes multiple files at once).
+	 
+
+
+
+grep: searches texts within a file
+ --> returns all lines with a specific pattern in a file or passed input
+ --> grep "dynamic" /etc/proxychains.conf  
+ --> find . type f | grep ".text"   // returns all paths with the pattern .text from the output returned by find
+
+
+
+locate
+ --> same as find but searches within a pre-built database (not useful for real-time manipulation)
+ --> locate --all "passwd"
+ --> locate /etc --all "passwd"
+
+
+
+chown
+ --> it changes the ownership of a file (Sets user and/or group)
+
+
+
+sort
+ --> Sort lines of text files or standard input alphabetically
+ --> sort -n numbers.txt   //sort numerically
+ --> sort -k2 -n data.txt   //sort numerically according to the second column
+ --> sort -u data.txt    //remove duplicates and sort
+
+
+
+uniq
+ --> Filter out repeated lines from input. It’s often used after sort, because uniq only removes consecutive duplicate lines.
+ --> uniq -d data.txt   //shows only duplicated lines
+ --> uniq -u data.txt   //shows only unique lines  
+ --> sort data.txt | uniq  //should be used in this way
+
+
+
+strings 
+ --> Extract readable text (printable ASCII or Unicode strings) from binary files (like executables, compiled programs, or dumps). It scans a file and pulls out all sequences of printable characters (usually 4 or more characters long), which are likely to be human-readable text hidden inside binary data.
+ --> strings data.txt
+
+
+

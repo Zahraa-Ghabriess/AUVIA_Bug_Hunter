@@ -1,0 +1,10 @@
+Level 1: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+Level 2: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx    use cat ./-
+Level 3: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx    use cat 'spaces in this filename'
+Level 4: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ    use cd ./inhere   then cat ...Hiding-From-You
+Level 5: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw    use cd ./inhere or inhere/ then find . -type f | xargs file or find . -type f print0 | xargs -0 file (for dealing with filenames with spaces or special characters)
+Level 6: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG    use cd ./inhere then find . -type f -size 1033c -print0 | xargs -0 file, i.e., find will return all files with size exactly 1033bytes and readable
+Level 7: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj    use cd / then find . -file f -user bandit7 -group bandit6 -size 33c then search for file that doesn't shows access denied message
+Level 8: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc    use cat data.txt | grep 'millionth'
+Level 9: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM    use sort data.txt | uniq -u 
+Level 10: 
